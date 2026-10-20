@@ -1,0 +1,37 @@
+:root{--bg:#0f1226;--card:#1a1e3a;--text:#eef0ff;--muted:#9aa1c9;--primary:#7c6cff;--primary2:#a78bfa;--green:#34d399;--border:#2b3062}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:340px;background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif}
+body.break{--primary:#10b981;--primary2:#34d399}
+.app{padding:16px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:16px}
+.mark{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;font-size:14px}
+.sessions{font-size:12px;color:var(--muted);background:var(--card);padding:4px 10px;border-radius:99px;border:1px solid var(--border)}
+.modes{display:flex;gap:6px;background:var(--card);padding:4px;border-radius:12px;margin-bottom:14px}
+.mode{flex:1;border:none;background:transparent;color:var(--muted);padding:7px 0;border-radius:9px;font-size:12px;font-weight:600;cursor:pointer;transition:.2s}
+.mode.active{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff}
+.ring-wrap{position:relative;width:170px;height:170px;margin:0 auto 14px}
+.ring{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:8}
+.ring .track{stroke:var(--card)}
+.ring .bar{stroke:var(--primary);stroke-linecap:round;stroke-dasharray:326.7;stroke-dashoffset:0;transition:stroke-dashoffset .5s linear}
+.time{position:absolute;inset:0;display:grid;place-items:center;font-size:38px;font-weight:800;font-variant-numeric:tabular-nums}
+.controls{display:flex;gap:10px;margin-bottom:18px}
+.controls button{flex:1;padding:11px;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;border:1px solid var(--border);transition:.15s}
+.primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;border:none!important}
+.primary:hover{filter:brightness(1.1)}
+.ghost{background:var(--card);color:var(--text)}
+.ghost:hover{border-color:var(--primary)}
+.tasks h3{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+#taskForm{display:flex;gap:8px;margin-bottom:10px}
+#taskInput{flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:13px}
+#taskInput:focus{outline:2px solid var(--primary);border-color:transparent}
+.add{width:40px;border:none;border-radius:10px;background:var(--primary);color:#fff;font-size:20px;cursor:pointer}
+ul{list-style:none;max-height:160px;overflow-y:auto}
+li{display:flex;align-items:center;gap:10px;padding:9px 10px;background:var(--card);border-radius:10px;margin-bottom:6px;font-size:13px}
+li input{accent-color:var(--primary);width:16px;height:16px;cursor:pointer}
+li span{flex:1;word-break:break-word}
+li.done span{text-decoration:line-through;color:var(--muted)}
+li .del{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px}
+li .del:hover{color:#f87171}
+.empty{text-align:center;color:var(--muted);font-size:12px;padding:8px}

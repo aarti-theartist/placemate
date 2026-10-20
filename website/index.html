@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlaceMate – Placement Preparation Portal</title>
+  <meta name="description" content="Prepare for campus placements: roadmap, progress tracker, aptitude quiz and mock interview practice.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="placebuddy.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <a href="#home" class="logo"><span class="logo-mark">P</span>PlaceMate</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav id="navLinks" class="nav-links">
+    <a href="#roadmap">Roadmap</a>
+    <a href="#tracker">Tracker</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#interview">Mock Interview</a>
+    <a href="#resources">Resources</a>
+    <a href="#contact">Contact</a>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <span class="pill">🎓 Walchand Institute of Technology · IT Dept</span>
+      <h1>Crack your <span class="grad">dream placement</span> with a plan.</h1>
+      <p>Structured roadmap, daily progress tracking, aptitude practice and mock interviews — all in one place, free for students.</p>
+      <div class="hero-cta">
+        <a href="#roadmap" class="btn primary">Start preparing</a>
+        <a href="#quiz" class="btn ghost">Take a quick quiz</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card"><b data-count="120">0</b><span>Practice questions</span></div>
+      <div class="stat-card"><b data-count="4">0</b><span>Prep tracks</span></div>
+      <div class="stat-card"><b data-count="30">0</b><span>Day plan</span></div>
+      <div class="stat-card"><b data-count="25">0</b><span>Mock prompts</span></div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="section">
+    <h2>Preparation Roadmap</h2>
+    <p class="sub">Pick a track to see what to study and how long it takes.</p>
+    <div class="tabs" id="tabs" role="tablist">
+      <button class="tab active" data-tab="dsa" role="tab">DSA &amp; Coding</button>
+      <button class="tab" data-tab="apt" role="tab">Aptitude</button>
+      <button class="tab" data-tab="hr" role="tab">HR &amp; Soft Skills</button>
+      <button class="tab" data-tab="res" role="tab">Resume &amp; Projects</button>
+    </div>
+    <div class="tab-panel" id="tabPanel"></div>
+  </section>
+
+  <!-- TRACKER -->
+  <section id="tracker" class="section alt">
+    <h2>Progress Tracker</h2>
+    <p class="sub">Tick topics as you finish them. Your progress is saved in this browser.</p>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span id="progressText">0% complete</span>
+    </div>
+    <div class="tracker-grid" id="trackerGrid"></div>
+    <button class="btn ghost small" id="resetTracker">Reset progress</button>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="section">
+    <h2>Aptitude &amp; Tech Quiz</h2>
+    <p class="sub">10 quick questions. Answer to see instant feedback.</p>
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-top"><span id="qCount">Question 1/10</span><span id="qScore">Score: 0</span></div>
+      <div class="quiz-bar"><div id="qBar"></div></div>
+      <h3 id="qText"></h3>
+      <div class="options" id="qOptions"></div>
+      <p class="feedback" id="qFeedback"></p>
+      <button class="btn primary" id="qNext" disabled>Next</button>
+    </div>
+  </section>
+
+  <!-- MOCK INTERVIEW -->
+  <section id="interview" class="section alt">
+    <h2>Mock Interview Practice</h2>
+    <p class="sub">Get a random question and answer it out loud within the time limit.</p>
+    <div class="mock-card">
+      <div class="mock-cat" id="mockCat">Technical</div>
+      <h3 id="mockQ">Click "New question" to begin.</h3>
+      <div class="timer" id="mockTimer">02:00</div>
+      <div class="mock-actions">
+        <button class="btn primary" id="newQ">New question</button>
+        <button class="btn ghost" id="startT">Start timer</button>
+        <button class="btn ghost" id="stopT">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section id="resources" class="section">
+    <h2>Top Resources</h2>
+    <div class="filter" id="filter">
+      <button class="chip active" data-f="all">All</button>
+      <button class="chip" data-f="coding">Coding</button>
+      <button class="chip" data-f="aptitude">Aptitude</button>
+      <button class="chip" data-f="interview">Interview</button>
+    </div>
+    <div class="cards" id="resCards"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section alt">
+    <h2>Contact the Placement Cell</h2>
+    <form id="contactForm" class="form" novalidate>
+      <label>Name<input type="text" id="cName" placeholder="Your name" required></label>
+      <label>Email<input type="email" id="cEmail" placeholder="you@example.com" required></label>
+      <label>Message<textarea id="cMsg" rows="4" placeholder="How can we help?" required></textarea></label>
+      <p class="error" id="formError"></p>
+      <button class="btn primary" type="submit">Send message</button>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 PlaceMate · Built with the help of Generative AI · Prompt Engineering Assignment 10</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+<script src="placebuddy.js"></script>
+</body>
+</html>

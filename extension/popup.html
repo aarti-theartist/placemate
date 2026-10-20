@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FocusFlow</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="jobs.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand"><span class="mark">F</span> FocusFlow</div>
+      <div class="sessions" title="Focus sessions completed today">🔥 <b id="sessions">0</b> today</div>
+    </header>
+
+    <nav class="views" id="views">
+      <button class="view-btn active" data-view="focus">⏱ Focus</button>
+      <button class="view-btn" data-view="jobs">💼 Jobs</button>
+    </nav>
+
+    <div id="view-focus">
+    <div class="modes" id="modes">
+      <button class="mode active" data-mode="focus" data-min="25">Focus</button>
+      <button class="mode" data-mode="short" data-min="5">Short break</button>
+      <button class="mode" data-mode="long" data-min="15">Long break</button>
+    </div>
+
+    <div class="ring-wrap">
+      <svg viewBox="0 0 120 120" class="ring">
+        <circle class="track" cx="60" cy="60" r="52"/>
+        <circle class="bar" id="bar" cx="60" cy="60" r="52"/>
+      </svg>
+      <div class="time" id="time">25:00</div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn" class="primary">Start</button>
+      <button id="resetBtn" class="ghost">Reset</button>
+    </div>
+
+    <section class="tasks">
+      <h3>Tasks <span id="taskCount"></span></h3>
+      <form id="taskForm">
+        <input id="taskInput" type="text" placeholder="What will you work on?" maxlength="80" autocomplete="off">
+        <button type="submit" class="add" aria-label="Add task">+</button>
+      </form>
+      <ul id="taskList"></ul>
+      <p class="empty" id="empty">No tasks yet. Add one above ✨</p>
+    </section>
+    </div>
+
+    <div id="view-jobs" hidden>
+      <p class="hint">Paste your resume text (or load a .txt file). Your resume stays on this device; only a skill keyword is sent to the job board.</p>
+      <textarea id="resumeText" rows="6" placeholder="Paste your resume here…"></textarea>
+      <div class="row">
+        <label class="file-btn">📄 Load .txt<input type="file" id="resumeFile" accept=".txt,.md,text/plain" hidden></label>
+        <button id="findJobs" class="primary small">Find jobs</button>
+      </div>
+      <p class="status" id="jobStatus"></p>
+      <div id="skillChips" class="chips"></div>
+      <div id="jobList"></div>
+      <div id="searchLinks" class="links" hidden></div>
+    </div>
+  </div>
+  <script src="jobs.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
